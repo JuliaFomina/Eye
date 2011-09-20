@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    a:orientation="vertical"
+    a:layout_gravity="center"
+    a:layout_height="match_parent"
+    a:layout_width="match_parent"
+    a:background= "@drawable/shape"
+    a:layout_margin="8dip">
+
+<TextView a:id="@+id/widget_textview"
+    a:text="@string/widget_text"
+    a:layout_height="match_parent"
+    a:layout_width="match_parent"
+    a:layout_gravity="center"
+    a:textColor="@android:color/black"
+    a:textSize="7sp"/>
+    <!--a:padding="10dip"/>-->
+</LinearLayout>
