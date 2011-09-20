@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
-</PreferenceScreen>-->
 <appwidget-provider xmlns:a="http://schemas.android.com/apk/res/android"
     a:updatePeriodMillis="86400000"
     a:initialLayout="@layout/main">
-    <!--a:minWidth="5dip"
-    a:minHeight="5dip"-->
 </appwidget-provider>
