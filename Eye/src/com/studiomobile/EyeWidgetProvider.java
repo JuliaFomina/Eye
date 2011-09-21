@@ -7,6 +7,7 @@ import android.content.Context;
 import android.widget.RemoteViews;
 
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -16,15 +17,14 @@ public class EyeWidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager,
                          int[] appWidgetIds) {
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new MyTime(context, appWidgetManager), 1, 1000);
+        timer.scheduleAtFixedRate(new MyTime(context, appWidgetManager), 1, 180000);
     }
 
     private class MyTime extends TimerTask {
         RemoteViews remoteViews;
         AppWidgetManager appWidgetManager;
         ComponentName thisWidget;
-        java.text.DateFormat format = SimpleDateFormat.getTimeInstance(SimpleDateFormat.MEDIUM,
-                Locale.getDefault());
+        DateFormat format = new SimpleDateFormat("hh:mm");
 
         public MyTime(Context context, AppWidgetManager appWidgetManager) {
             this.appWidgetManager = appWidgetManager;
