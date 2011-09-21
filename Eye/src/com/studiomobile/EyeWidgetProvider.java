@@ -17,14 +17,14 @@ public class EyeWidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager,
                          int[] appWidgetIds) {
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new MyTime(context, appWidgetManager), 1, 180000);
+        timer.scheduleAtFixedRate(new MyTime(context, appWidgetManager), 1, 1000);
     }
 
     private class MyTime extends TimerTask {
         RemoteViews remoteViews;
         AppWidgetManager appWidgetManager;
         ComponentName thisWidget;
-        DateFormat format = new SimpleDateFormat("hh:mm");
+        DateFormat format = new SimpleDateFormat("hh:mm:ss");
 
         public MyTime(Context context, AppWidgetManager appWidgetManager) {
             this.appWidgetManager = appWidgetManager;
