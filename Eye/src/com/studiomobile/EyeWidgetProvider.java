@@ -1,4 +1,4 @@
-package android.eye_widget;
+package com.studiomobile;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
