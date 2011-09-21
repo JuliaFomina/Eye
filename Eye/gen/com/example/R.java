@@ -26,6 +26,6 @@ public final class R {
         public static final int app_name=0x7f050000;
     }
     public static final class xml {
-        public static final int weather_widget_provider=0x7f040000;
+        public static final int eye_widget_provider=0x7f040000;
     }
 }
