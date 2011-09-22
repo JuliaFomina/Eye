@@ -8,8 +8,6 @@ import android.os.IBinder;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
-
-import java.security.Provider;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -19,9 +17,8 @@ public class EyeWidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onDisabled(Context context) {
-        super.onDisabled(context);
-        //TODO видимо, стоит поменять местами эти две строчки
         context.stopService(new Intent(context, UpdateService.class));
+        super.onDisabled(context);
     }
 
     @Override
@@ -102,13 +99,8 @@ public class EyeWidgetProvider extends AppWidgetProvider {
             AppWidgetManager manager = AppWidgetManager.getInstance(this);
             manager.updateAppWidget(widget, views);
         }
+
         private void reactOnSms(Context context){
-//            RemoteViews views = new RemoteViews(getPackageName(), R.layout.main);
-//            views.setTextViewText(R.id.widget_textview, "SMS");
-//
-//            ComponentName widget = new ComponentName(this, EyeWidgetProvider.class);
-//            AppWidgetManager manager = AppWidgetManager.getInstance(this);
-//            manager.updateAppWidget(widget, views);
             Toast.makeText(context, "new sms", Toast.LENGTH_SHORT).show();
         }
     }

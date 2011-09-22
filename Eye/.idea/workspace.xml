@@ -62,10 +62,8 @@
       <file leaf-file-name="EyeWidgetProvider.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/studiomobile/EyeWidgetProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="73" selection-start="2042" selection-end="2081" vertical-scroll-proportion="0.589309">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="10" column="26" selection-start="286" selection-end="286" vertical-scroll-proportion="0.19556715">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,7 +132,7 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="74" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0">
+            <state line="3" column="22" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -660,13 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="74" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/eye_widget_provider.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="28" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0">
@@ -674,12 +665,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="22" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/studiomobile/EyeWidgetProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="73" selection-start="2042" selection-end="2081" vertical-scroll-proportion="0.589309">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="10" column="26" selection-start="286" selection-end="286" vertical-scroll-proportion="0.19556715">
+          <folding />
         </state>
       </provider>
     </entry>
