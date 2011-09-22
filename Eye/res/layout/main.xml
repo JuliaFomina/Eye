@@ -19,4 +19,6 @@
         <!--a:background="@drawable/button"-->
         <!--a:layout_height="70dp"-->
         <!--a:layout_width="70dp"-->
-        <!--a:layout_gravity="center"/>-->
+        <!--a:layout_gravity="center"-->
+        <!--a:onClick="clickAction"/>-->
+    <!--</LinearLayout>-->
