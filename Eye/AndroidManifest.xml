@@ -10,7 +10,6 @@
                 <action a:name="ACTION_TIME_TICK"/>
                 <action a:name="android.provider.Telephony.SMS_RECEIVED"/>
                 <action a:name="android.EyeWidget.ACTION_ON_CLICK"/>
-                <action a:name="android.intent.action.PICK"/>
             </intent-filter>
             <meta-data a:name="android.appwidget.provider"
                        a:resource="@xml/eye_widget_provider"/>

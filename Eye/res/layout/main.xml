@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
-              a:layout_width="fill_parent"
-              a:layout_height="wrap_content"
-              a:orientation="vertical"
-              a:background="@android:color/transparent"
-              a:layout_gravity="center">
 
-    <ImageView a:id="@+id/widget_imageview"
-                 a:background="@drawable/fluffy_widget"
-                 a:layout_height="70dp"
-                 a:layout_width="70dp"
-                 a:layout_gravity="center"/>
-                 <!--a:onClick="onClick"/>-->
-</LinearLayout>
+<ImageView xmlns:a="http://schemas.android.com/apk/res/android"
+           a:id="@+id/widget_imageview"
+           a:background="@drawable/fluffy_widget"
+           a:layout_height="70dp"
+           a:layout_width="70dp"
+           a:layout_gravity="center"/>

@@ -7,6 +7,7 @@ import android.appwidget.AppWidgetProvider;
 import android.content.*;
 import android.os.IBinder;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 
 public class EyeWidgetProvider extends AppWidgetProvider {
@@ -27,16 +28,20 @@ public class EyeWidgetProvider extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager,
                          int[] appWidgetIds) {
-        super.onUpdate(context, appWidgetManager, appWidgetIds);
+        for (int i = 0; i < appWidgetIds.length; i++) {
 
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.main);
-        Intent widgetClick = new Intent(context, EyeWidgetProvider.class);
-        widgetClick.setAction("android.EyeWidget.ACTION_ON_CLICK");
-        PendingIntent pendingIntentViewClick = PendingIntent.getBroadcast(context, 0, widgetClick, 0);
-        remoteViews.setOnClickPendingIntent(R.id.widget_imageview, pendingIntentViewClick);
-        appWidgetManager.updateAppWidget(appWidgetIds, remoteViews);
+            int appWidgetId = appWidgetIds[i];
+            super.onUpdate(context, appWidgetManager, appWidgetIds);
+            context.startService(new Intent(UpdateService.ACTION_UPDATE));
 
-        context.startService(new Intent(UpdateService.ACTION_UPDATE));
+
+            RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.main);
+            Intent widgetClick = new Intent(context, EyeWidgetProvider.class);
+            widgetClick.setAction("android.EyeWidget.ACTION_ON_CLICK");
+            PendingIntent pendingIntentViewClick = PendingIntent.getBroadcast(context, 0, widgetClick, 0);
+            remoteViews.setOnClickPendingIntent(R.id.widget_imageview, pendingIntentViewClick);
+            appWidgetManager.updateAppWidget(appWidgetId, remoteViews);
+        }
     }
 
     /**
@@ -46,15 +51,14 @@ public class EyeWidgetProvider extends AppWidgetProvider {
 
         static final String ACTION_UPDATE = "android.appwidget.action.UPDATE";
         static final String ACTION_SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
-        static final  String ACTION_ON_CLICK = "android.EyeWidget.ACTION_ON_CLICK";
+        static final String ACTION_ON_CLICK = "android.EyeWidget.ACTION_ON_CLICK";
 
         private final static IntentFilter intentFilter;
 
         static {
             intentFilter = new IntentFilter();
-//            intentFilter.addAction(Intent.ACTION_TIME_TICK);
             intentFilter.addAction(ACTION_SMS_RECEIVED);
-            intentFilter.addAction(Intent.ACTION_PICK);
+            intentFilter.addAction(ACTION_ON_CLICK);
         }
 
 
@@ -62,9 +66,7 @@ public class EyeWidgetProvider extends AppWidgetProvider {
             @Override
             public void onReceive(Context context, Intent intent) {
                 final String action = intent.getAction();
-//                if (action.equals(Intent.ACTION_TIME_TICK)) {
-//                    update();
-//                }
+
                 if (action.equals(ACTION_SMS_RECEIVED)) {
                     reactOnSms(context);
                 }
@@ -101,6 +103,8 @@ public class EyeWidgetProvider extends AppWidgetProvider {
 
         /**
          * Updates and redraws the Widget.
+         * Now this method isn't used but it will helpful in counting new incoming message
+         * (to know when there is no any new message)
          */
         private void update() {
 //            DateFormat format = new SimpleDateFormat("hh:mm");
@@ -121,6 +125,8 @@ public class EyeWidgetProvider extends AppWidgetProvider {
         }
 
         public void onCLick(Context context) {
+            Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
+
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.main);
             views.setImageViewResource(R.id.widget_imageview, R.drawable.fluffy_pressed);
             ComponentName widget = new ComponentName(context, EyeWidgetProvider.class);
