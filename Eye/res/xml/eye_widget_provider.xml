@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <appwidget-provider xmlns:a="http://schemas.android.com/apk/res/android"
-    a:updatePeriodMillis="2000"
+    a:updatePeriodMillis="180000"
     a:initialLayout="@layout/main">
 </appwidget-provider>
