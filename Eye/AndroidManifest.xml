@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:a="http://schemas.android.com/apk/res/android"
           package="com.studiomobile">
-    <uses-permission a:name="android.permission.RECEIVE_SMS" />
+    <uses-permission a:name="android.permission.RECEIVE_SMS"/>
     <application a:icon="@drawable/icon" a:label="@string/app_name">
         <!-- EyeWidget -->
         <receiver a:name=".EyeWidgetProvider" a:label="@string/app_name">
@@ -9,6 +9,7 @@
                 <action a:name="android.appwidget.action.APPWIDGET_UPDATE"/>
                 <action a:name="android.provider.Telephony.SMS_RECEIVED"/>
                 <action a:name="android.EyeWidget.ACTION_ON_CLICK"/>
+                <action a:name="android.EyeWidget.ACTION_START_ACTIVITY"/>
             </intent-filter>
             <meta-data a:name="android.appwidget.provider"
                        a:resource="@xml/eye_widget_provider"/>
@@ -20,8 +21,17 @@
                 <action a:name="android.appwidget.action.UPDATE"/>
                 <action a:name="android.provider.Telephony.SMS_RECEIVED"/>
                 <action a:name="android.EyeWidget.ACTION_ON_CLICK"/>
+                <action a:name="android.EyeWidget.ACTION_START_ACTIVITY"/>
             </intent-filter>
         </service>
+
+        <activity a:name=".EyeActivity" a:label="@string/app_name">
+            <intent-filter>
+                <!--<action a:name="com.studiomobile.EyeActivity"/>-->
+                <action a:name="android.intent.action.MAIN"/>
+                <category a:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
 
     </application>
 </manifest>

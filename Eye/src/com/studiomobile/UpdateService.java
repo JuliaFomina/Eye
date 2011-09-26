@@ -12,6 +12,7 @@ public class UpdateService extends Service {
     static final String ACTION_UPDATE = "android.appwidget.action.UPDATE";
     static final String ACTION_SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
     static final String ACTION_ON_CLICK = "android.EyeWidget.ACTION_ON_CLICK";
+    static final String ACTION_START_ACTIVITY = "android.EyeWidget.ACTION_START_ACTIVITY";
 
     static final String TOAST_TEXT = "I like when you click on me";
 
@@ -21,6 +22,7 @@ public class UpdateService extends Service {
         intentFilter = new IntentFilter();
         intentFilter.addAction(ACTION_SMS_RECEIVED);
         intentFilter.addAction(ACTION_ON_CLICK);
+        intentFilter.addAction(ACTION_START_ACTIVITY);
     }
 
 
@@ -33,6 +35,9 @@ public class UpdateService extends Service {
             }
             if (action.equals(ACTION_ON_CLICK)) {
                 onCLick(context);
+            }
+            if(action.equals(ACTION_START_ACTIVITY)){
+                reactOnStartActivity();
             }
         }
     };
@@ -90,6 +95,13 @@ public class UpdateService extends Service {
         mediaPlayer.start();
         MediaPlayerListener playerCompletionListener = new MediaPlayerListener(context, mediaPlayer);
         mediaPlayer.setOnCompletionListener(playerCompletionListener);
+    }
+
+    private  void reactOnStartActivity(){
+        /* start main activity */
+       Intent startActivityIntent = new Intent(getBaseContext(), EyeActivity.class);
+       startActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+       getApplication().startActivity(startActivityIntent);
     }
 }
 

@@ -3,6 +3,7 @@ package com.studiomobile;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.widget.RemoteViews;
 
@@ -21,6 +22,10 @@ public class MediaPlayerListener implements MediaPlayer.OnCompletionListener{
         ComponentName widget = new ComponentName(context, EyeWidgetProvider.class);
         AppWidgetManager manager = AppWidgetManager.getInstance(context);
         manager.updateAppWidget(widget, views);
+
+        Intent startActivityIntent = new Intent(UpdateService.ACTION_START_ACTIVITY);
+        context.sendBroadcast(startActivityIntent);
+
         mediaPlayer.release();
         mediaPlayer = null;
     }

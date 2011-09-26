@@ -29,12 +29,21 @@ public class EyeWidgetProvider extends AppWidgetProvider {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
         for (int i = 0; i < appWidgetIds.length; i++) {
             int appWidgetId = appWidgetIds[i];
+            /* code: on click widget change image */
 
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.main);
             Intent widgetIntent = new Intent(UpdateService.ACTION_ON_CLICK);
             PendingIntent pendingIntentViewClick = PendingIntent.getBroadcast(context, 0, widgetIntent, 0);
             remoteViews.setOnClickPendingIntent(R.id.widget_imageview, pendingIntentViewClick);
             appWidgetManager.updateAppWidget(appWidgetId, remoteViews);
+
+
+
+//            Intent intent = new Intent(context, EyeActivity.class);
+//            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+//            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.main);
+//            views.setOnClickPendingIntent(R.id.widget_imageview, pendingIntent);
+//            appWidgetManager.updateAppWidget(appWidgetId, views);
         }
     }
 
