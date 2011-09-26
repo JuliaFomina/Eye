@@ -94,6 +94,10 @@ public class UpdateService extends Service {
             ComponentName widget = new ComponentName(context, EyeWidgetProvider.class);
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             manager.updateAppWidget(widget, views);
+
+
+            MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.click);
+            mediaPlayer.start();
         }
 }
 
