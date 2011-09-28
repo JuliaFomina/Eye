@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+              a:minHeight="72dp"
+              a:minWidth="146dp"
+              a:layout_height="wrap_content"
+              a:layout_width="wrap_content">
 
-<ImageView xmlns:a="http://schemas.android.com/apk/res/android"
-           a:id="@+id/widget_imageview"
-           a:background="@drawable/fluffy_widget"
-           a:layout_height="70dp"
-           a:layout_width="70dp"
-           a:layout_gravity="center"/>
+    <ImageView a:id="@+id/widget_imageview"
+               a:background="@drawable/fluffy_widget"
+               a:layout_alignParentLeft="true"
+               a:layout_height="55dp"
+               a:layout_width="55dp"/>
+
+    <TextView a:id="@+id/widget_textview"
+              a:layout_height="wrap_content"
+              a:layout_width="wrap_content"
+              a:layout_toRightOf="@id/widget_imageview"
+              a:layout_alignParentRight="true"
+              a:layout_marginLeft="5dp"
+              a:text="Zzz"
+              a:textColor="#000000"/>
+
+</RelativeLayout>

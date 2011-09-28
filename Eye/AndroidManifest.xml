@@ -10,6 +10,7 @@
                 <action a:name="android.provider.Telephony.SMS_RECEIVED"/>
                 <action a:name="android.EyeWidget.ACTION_ON_CLICK"/>
                 <action a:name="android.EyeWidget.ACTION_START_ACTIVITY"/>
+                <action a:name="android.EyeWidget.ACTION_CHANGE_DAY_NIGHT"/>
             </intent-filter>
             <meta-data a:name="android.appwidget.provider"
                        a:resource="@xml/eye_widget_provider"/>
@@ -22,6 +23,7 @@
                 <action a:name="android.provider.Telephony.SMS_RECEIVED"/>
                 <action a:name="android.EyeWidget.ACTION_ON_CLICK"/>
                 <action a:name="android.EyeWidget.ACTION_START_ACTIVITY"/>
+                <action a:name="android.EyeWidget.ACTION_CHANGE_DAY_NIGHT"/>
             </intent-filter>
         </service>
 
