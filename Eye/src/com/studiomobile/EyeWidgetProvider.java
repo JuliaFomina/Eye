@@ -35,9 +35,14 @@ public class EyeWidgetProvider extends AppWidgetProvider {
 
             /* code: on click widget change image */
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.main);
-            Intent widgetIntent = new Intent(UpdateService.ACTION_ON_CLICK);
-            PendingIntent pendingIntentViewClick = PendingIntent.getBroadcast(context, 0, widgetIntent, 0);
-            remoteViews.setOnClickPendingIntent(R.id.widget_imageview, pendingIntentViewClick);
+            Intent imageViewClickIntent = new Intent(UpdateService.ACTION_ON_IMAGE_VIEW_CLICK);
+            PendingIntent pendingIntentImageViewClick = PendingIntent.getBroadcast(context, 0, imageViewClickIntent, 0);
+            remoteViews.setOnClickPendingIntent(R.id.widget_imageview, pendingIntentImageViewClick);
+
+            Intent textViewClickIntent = new Intent(UpdateService.ACTION_ON_TEXT_VIEW_CLICK);
+            PendingIntent pendingIntentTextViewClick = PendingIntent.getBroadcast(context, 0, textViewClickIntent, 0);
+            remoteViews.setOnClickPendingIntent(R.id.widget_textview, pendingIntentTextViewClick);
+
             appWidgetManager.updateAppWidget(appWidgetId, remoteViews);
 
             /* alarmManager for change widget image day/night */
@@ -48,6 +53,8 @@ public class EyeWidgetProvider extends AppWidgetProvider {
             AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
             PendingIntent pi = PendingIntent.getBroadcast(context, 0, new Intent(UpdateService.ACTION_CHANGE_DAY_NIGHT), 0);
             alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), 30000, pi);
+
+
         }
     }
 

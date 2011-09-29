@@ -17,8 +17,8 @@ public class MediaPlayerListener implements MediaPlayer.OnCompletionListener{
     }
 
     public void onCompletion(MediaPlayer mediaPlayer) {
-        Intent startActivityIntent = new Intent(UpdateService.ACTION_START_ACTIVITY);
-        context.sendBroadcast(startActivityIntent);
+//        Intent startActivityIntent = new Intent(UpdateService.ACTION_START_ACTIVITY);
+//        context.sendBroadcast(startActivityIntent);
 
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.main);
         views.setImageViewResource(R.id.widget_imageview, R.drawable.fluffy_widget);
